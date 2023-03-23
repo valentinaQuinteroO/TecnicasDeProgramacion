@@ -1,6 +1,7 @@
 package zoologico;
 import java.io.IOException;
 import java.util.ArrayList;
+import view.Index;
 /**
  *
  * @author Valentina
@@ -18,18 +19,15 @@ public class DeptoLogistica {
         evaluarOpciones(opcion);
     }    
     
-    public static void ingresarAnimalSalvaje() throws IOException{    
-        AnimalSalvaje as = new AnimalSalvaje(typing.readString("Ingrese el nivel de peligrosidad del animal: "),
-                typing.readInt("Ingrese el código del animal: "),typing.readString("Ingrese el nombre del animal: "),
-                typing.readString("Ingrese la especie del animal :"));
-        listaAnimalesSalvajes.add(as);  // Se agrega el animal doméstico a la lista.
+    public static void ingresarAnimalSalvaje(AnimalSalvaje as) throws IOException{
+        listaAnimalesSalvajes.add(as);
         System.out.println("Bienvenido, "+as.toString());
     }
     
-    public static void ingresarAnimalDomestico() throws IOException{
-        AnimalDomestico ad = new AnimalDomestico(typing.readString("Ingrese el uso que le va a dar al animal: "),
-                typing.readInt("Ingrese el código del animal doméstico: "), typing.readString("Ingrese el nombre: "),
-                typing.readString("Ingrese la especie: "));
+    public static void ingresarAnimalDomestico(AnimalDomestico ad) throws IOException{
+//        AnimalDomestico ad = new AnimalDomestico(typing.readString("Ingrese el uso que le va a dar al animal: "),
+//                typing.readInt("Ingrese el código del animal doméstico: "), typing.readString("Ingrese el nombre: "),
+//                typing.readString("Ingrese la especie: "));
         listaAnimalesDomesticos.add(ad);
         System.out.println("Bienvenido, "+ad.toString());
         
@@ -80,14 +78,12 @@ public class DeptoLogistica {
     
     public static void evaluarOpciones(int pOpcion) throws IOException{
         if(pOpcion == 1){
-            ingresarAnimalSalvaje();
-        }else if(pOpcion == 2){
-            ingresarAnimalDomestico();
-        }else if(pOpcion == 3){
+            new Index().setVisible(true);
+        }else if(pOpcion == 3) {
             verPlanes();
-        }else if(pOpcion == 4){
+        }else if(pOpcion == 4) {
             verAbono();
-        }else if(pOpcion == 5){
+        }else if(pOpcion == 5) {
             comprarBoletas();
         }
     }
