@@ -31,6 +31,7 @@ public class VentaBoletas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jBAbonos = new javax.swing.JButton();
         jBPlanes = new javax.swing.JButton();
+        jBGenerarReporteVentas = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jBAtras = new javax.swing.JButton();
 
@@ -39,16 +40,16 @@ public class VentaBoletas extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(177, 122, 211));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("OPCIONES DE VENTA");
+        jLabel1.setText("OPCIONES DE BOLETERÍA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,6 +72,9 @@ public class VentaBoletas extends javax.swing.JFrame {
             }
         });
 
+        jBGenerarReporteVentas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jBGenerarReporteVentas.setText("Generar Reporte");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -78,6 +82,7 @@ public class VentaBoletas extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(64, 64, 64)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jBGenerarReporteVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBAbonos, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBPlanes, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -89,7 +94,9 @@ public class VentaBoletas extends javax.swing.JFrame {
                 .addComponent(jBPlanes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jBAbonos, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(jBGenerarReporteVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
 
         jPanel3.setBackground(new java.awt.Color(184, 119, 226));
@@ -131,7 +138,7 @@ public class VentaBoletas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -140,7 +147,9 @@ public class VentaBoletas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBPlanesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPlanesActionPerformed
-        // TODO add your handling code here:
+        VentanaPlanes venPlan = new VentanaPlanes();
+        venPlan.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jBPlanesActionPerformed
 
     private void jBAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAtrasActionPerformed
@@ -187,6 +196,7 @@ public class VentaBoletas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAbonos;
     private javax.swing.JButton jBAtras;
+    private javax.swing.JButton jBGenerarReporteVentas;
     private javax.swing.JButton jBPlanes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
