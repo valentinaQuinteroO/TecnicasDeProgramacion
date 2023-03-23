@@ -25,7 +25,7 @@ public class PlanGeneral extends Plan{
         }else if(temaPlan.equalsIgnoreCase("Plan Granja")){
             setPrecio(30000);
             setDuracion(3);
-        }else if(temaPlan.equalsIgnoreCase("Plan Acuatico")){
+        }else if(temaPlan.equalsIgnoreCase("Plan Acuario")){
             setPrecio(35000);
             setDuracion(3);
         }
@@ -63,7 +63,7 @@ public class PlanGeneral extends Plan{
                     + "ordeñar, alimentar a los conejos y a las cabras entre otras actividades.\n"
                     + "Duracion: El recorrido completo tendra una duracion de 3h\n"
                     + "Precio: Este plan tiene un costo de $30000 sin refrigerio o souvenir";
-        }else if(tipoPlan.equalsIgnoreCase("Plan Acuatico")){
+        }else if(tipoPlan.equalsIgnoreCase("Plan Acuario")){
             infoPlan = "PLAN ACUARIO:\n"
                     + "Descripcion: Por la compra de una boleta con este plan, podrá visitar \n"
                     + "el acuario del zoológico con la compañía de diferentes guías\n"

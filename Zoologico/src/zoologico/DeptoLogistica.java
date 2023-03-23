@@ -15,7 +15,7 @@ public class DeptoLogistica {
     
     
     public static void admZoo() throws IOException{    // Es estático porque sólo se tiene un departamento de logística 
-        int opcion = mostrarOpciones();
+        int opcion = ingresarContraseña();
         evaluarOpciones(opcion);
     }    
     
@@ -52,39 +52,40 @@ public class DeptoLogistica {
         
     }
     
-    public static void comprarBoletas() throws IOException{
+    public static void ingresarCliente(Cliente client) throws IOException{
         
-        String nombre = typing.readString("Ingrese el nombre del cliente: ");
-        int id = typing.readInt("Ingrese la identificacion del cliente: ");
+//        String nombre = typing.readString("Ingrese el nombre del cliente: ");
+//        int id = typing.readInt("Ingrese la identificacion del cliente: ");
+//        
+//        String tipoBoleta = typing.readString("Ingrese el tipo de boleta (abono o plan) que desea: ");
+//        String tipoPlan = typing.readString("Ingrese el tipo de plan que va a escoger");
+//        int cantBol = typing.readInt("Ingrese la cantidad de boletas que quiere comprar.");
+        //Boleta bol = new Boleta(cantBol, tipoBoleta, tipoPlan);
         
-        String tipoBoleta = typing.readString("Ingrese el tipo de boleta (abono o plan) que desea: ");
-        String tipoPlan = typing.readString("Ingrese el tipo de plan que va a escoger");
-        int cantBol = typing.readInt("Ingrese la cantidad de boletas que quiere comprar.");
-        Boleta bol = new Boleta(cantBol, tipoBoleta, tipoPlan);
-        listaBoletas.add(bol);
-        Cliente client = new Cliente(nombre, id, bol.getCostoTotal());
-        System.out.println("Bienvenido, " + client.toString());
+        //Cliente client = new Cliente(nombre, id, bol.getCostoTotal());
         listaClientes.add(client);
-        
+        System.out.println("Bienvenido, " + client.toString());
+    }
+    
+    public static void ingresarBoleta(Boleta bol)
+    {
+        listaBoletas.add(bol);
     }
     
     
-    public static int mostrarOpciones() throws IOException{
-        System.out.println("Que desea hacer: 1 Ingreso animal salvaje, 2 Ingreso animal doméstico,"
-                + "3 Ver planes, 4 Ver abonos, 5 Comprar boletas");
-        int pOpcion = typing.readInt("Ingrese la opción que necesita: ");
+    public static int ingresarContraseña() throws IOException{
+        int pOpcion = typing.readInt("Ingrese la contraseña para iniciar el sistema: ");
         return pOpcion;
     }
     
     public static void evaluarOpciones(int pOpcion) throws IOException{
-        if(pOpcion == 1){
-            new Index().setVisible(true);
-        }else if(pOpcion == 3) {
-            verPlanes();
-        }else if(pOpcion == 4) {
-            verAbono();
-        }else if(pOpcion == 5) {
-            comprarBoletas();
+        
+        while(pOpcion != 1111){
+            System.out.println("Contraseña incorrecta, por favor ingresela de nuevo: ");
+            pOpcion = ingresarContraseña();
         }
+        
+        new Index().setVisible(true);
+        
     }
 }

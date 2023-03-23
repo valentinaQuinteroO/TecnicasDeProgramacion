@@ -63,6 +63,11 @@ public class VentaBoletas extends javax.swing.JFrame {
 
         jBAbonos.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jBAbonos.setText("Abonos");
+        jBAbonos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAbonosActionPerformed(evt);
+            }
+        });
 
         jBPlanes.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jBPlanes.setText("Planes");
@@ -157,6 +162,13 @@ public class VentaBoletas extends javax.swing.JFrame {
         index.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jBAtrasActionPerformed
+
+    private void jBAbonosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAbonosActionPerformed
+        VentanaAbonos ventAb =  new VentanaAbonos();
+        ventAb.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jBAbonosActionPerformed
 
     /**
      * @param args the command line arguments

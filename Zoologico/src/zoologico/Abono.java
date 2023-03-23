@@ -18,7 +18,7 @@ public class Abono extends Plan {
     
     private void modificarPorTipo(){
         if(tipoPlan == null || cantPersonas <= 0){
-            return; // validar la variable tipoPlan para evitar errores
+            return;
         }
         if(tipoPlan.equalsIgnoreCase("Plan Escolar")){
             if(cantPersonas > 0 && cantPersonas < 30){

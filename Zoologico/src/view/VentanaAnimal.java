@@ -18,7 +18,6 @@ import zoologico.DeptoLogistica;
  */
 public class VentanaAnimal extends javax.swing.JFrame {
     
-    DeptoLogistica dptoLog = new DeptoLogistica();
     
     public VentanaAnimal() {
         initComponents();
@@ -427,14 +426,14 @@ public class VentanaAnimal extends javax.swing.JFrame {
         if(jRadioButtonAnimalDomestico.isSelected()){
             AnimalDomestico animalDomestico = new AnimalDomestico(jTextUsoDomestico.getText(), Integer.parseInt(jTextCodigoDomestico.getText()), jTextNombreAnimalDomestico.getText(), jTextEspecieDomestico.getText());
             try {
-                dptoLog.ingresarAnimalDomestico(animalDomestico);
+                DeptoLogistica.ingresarAnimalDomestico(animalDomestico);
             } catch (IOException ex) {
                 Logger.getLogger(VentanaAnimal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }else if(jRadioButtonAnimalSalvaje.isSelected()){
             AnimalSalvaje animalSalvaje = new AnimalSalvaje(jTextPeligrosidadSalvaje.getText(), Integer.parseInt(jTextCodigoSalvaje.getText()), jTextNombreAnimalSalvaje.getText(), jTextEspecieSalvaje.getText());
             try {
-                dptoLog.ingresarAnimalSalvaje(animalSalvaje);
+                DeptoLogistica.ingresarAnimalSalvaje(animalSalvaje);
             } catch (IOException ex) {
                 Logger.getLogger(VentanaAnimal.class.getName()).log(Level.SEVERE, null, ex);
             }
