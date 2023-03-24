@@ -80,7 +80,7 @@ public class DeptoLogistica {
     try {
         
         // Crear una instancia de PdfWriter y asociarla con el documento
-        PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/Valentina/Desktop/prueba/reporteVentas.pdf"));
+        PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/Valentina/Desktop/GitHub/TecnicasDeProgramacion/Zoologico/Documentacion/reporteVentas.pdf"));
         
         
         // Abrir el documento

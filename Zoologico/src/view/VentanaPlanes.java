@@ -680,6 +680,7 @@ public class VentanaPlanes extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(VentanaPlanes.class.getName()).log(Level.SEVERE, null, ex);
         }
+        boleta.setValorVenta(boleta.getValorVenta() + refrigerios*5000);
         boleta.setCostoTotal(precio);
         
         DeptoLogistica.ingresarBoleta(boleta);

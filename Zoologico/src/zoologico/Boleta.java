@@ -17,7 +17,7 @@ public class Boleta {
         this.tipoPlan = tipoPlan;
         this.descuento = asignarDescuento(cantBoletas, tipoBoleta);
         this.valorUnidad = precioPortipo(tipoPlan, tipoBoleta, cantBoletas);
-        this.valorVenta = (valorUnidad * cantBoletas);
+        this.valorVenta = asignarValorVenta(tipoBoleta, cantBoletas, valorUnidad);
         this.costoTotal = (valorUnidad * cantBoletas) - ((valorUnidad * cantBoletas)*(descuento / 100));
     }
 
@@ -35,13 +35,24 @@ public class Boleta {
         
         return precio;
     }
+    
+    public static float asignarValorVenta(String tipoBoleta, int cantBol, float valorUnidad){
+        float valor = 0; 
+        if(tipoBoleta.equalsIgnoreCase("plan") || tipoBoleta.equalsIgnoreCase("plan general")){
+            valor = cantBol * valorUnidad;
+        }else if(tipoBoleta.equalsIgnoreCase("abono") || tipoBoleta.equalsIgnoreCase("abonos")){
+            valor = valorUnidad;
+        }
+        return valor;
+        
+    }
 
     public static float asignarDescuento(int cantBoletas, String tipoBoleta){
         float dcto = 0;
         if(tipoBoleta.equalsIgnoreCase("plan") || tipoBoleta.equalsIgnoreCase("plan general")){
             if( 5 < cantBoletas && cantBoletas < 10){
                 dcto = 5;
-            } else if (cantBoletas > 10){
+            } else if (cantBoletas >= 10){
                 dcto = 10;
             }
         }
