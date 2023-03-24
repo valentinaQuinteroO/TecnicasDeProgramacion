@@ -1,8 +1,12 @@
 package zoologico;
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -71,28 +75,89 @@ public class DeptoLogistica {
         return pOpcion;
     }
     
-    public static void generarPdf() throws DocumentException{
-        Document documento = new Document();
-        try{
-            // Escribir el documento en un archivo
-            PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/Valentina/Desktop/prueba/pruebita.pdf"));
-            
-            // Abrir el documento
-            documento.open();
-            
-            // Agregar el párrafo al documento
-            String texto = "Hola mundo";
-            Paragraph parrafo = new Paragraph(texto);
-            documento.add(parrafo);
-        } catch (DocumentException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            // Cerrar el documento
-            documento.close();
+    
+    
+    
+    
+    
+//    public static void generarPdf() throws DocumentException{
+//        Document documento = new Document();
+//        try {
+//            // Escribir el documento en un archivo
+//            PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/Valentina/Desktop/prueba/pruebita.pdf"));
+//
+//            // Abrir el documento
+//            documento.open();
+//
+//            // Agregar la imagen al documento
+//            String rutaImagen = "C:/Users/Valentina/Desktop/GitHub/TecnicasDeProgramacion/Zoologico/src/images/mariposa.jpeg";
+//            Image foto = Image.getInstance(new File(rutaImagen).getAbsolutePath());
+//            foto.scaleToFit(100, 100);
+//            foto.setAlignment(Chunk.ALIGN_MIDDLE);
+//            documento.add(foto);
+//
+//            // Agregar el párrafo al documento
+//            String texto = "Hola mundo";
+//            Paragraph parrafo = new Paragraph(texto);
+//            documento.add(parrafo);    
+//        } catch (DocumentException e) {
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            // Cerrar el documento
+//            documento.close();
+//        }
+//    }
+    public static void generarPdf() throws DocumentException {
+    Document documento = new Document();
+    try {
+        // Crear una instancia de PdfWriter y asociarla con el documento
+        PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/Valentina/Desktop/prueba/pruebita.pdf"));
+        
+        // Abrir el documento
+        documento.open();
+        
+        // Agregar la imagen al documento
+        String rutaImagen = "C:/Users/Valentina/Desktop/GitHub/TecnicasDeProgramacion/Zoologico/src/images/mariposa.jpeg";
+        Image foto = Image.getInstance(new File(rutaImagen).getAbsolutePath());
+        foto.scaleToFit(100, 100);
+        foto.setAlignment(Chunk.ALIGN_MIDDLE);
+        documento.add(foto);
+        
+        // Crear la tabla
+        PdfPTable tabla = new PdfPTable(6);
+        
+        // Agregar las celdas de la primera fila
+        tabla.addCell("PLAN");
+        tabla.addCell("VALOR");
+        tabla.addCell("CANTIDAD");
+        tabla.addCell("VALOR VENTA");
+        tabla.addCell("DESCUENTOS");
+        tabla.addCell("TOTAL");
+        
+        // Agregar los datos que me pide el reporte
+        for(int i = 0; i < listaClientes.size(); i++){
+            tabla.addCell(listaBoletas.get(i).getTipoPlan());
+            tabla.addCell(String.valueOf(listaBoletas.get(i).getValorUnidad()));
+            tabla.addCell(String.valueOf(listaBoletas.get(i).getCantBoletas()));
+            tabla.addCell(String.valueOf(listaBoletas.get(i).getValorVenta()));
+            tabla.addCell(String.valueOf(listaBoletas.get(i).getDescuento()));
+            tabla.addCell(String.valueOf(listaBoletas.get(i).getCostoTotal()));
         }
+        
+        
+        // Agregar la tabla al documento
+        documento.add(tabla);
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        // Cerrar el documento
+        documento.close();
     }
+}
+
+
     
     
     

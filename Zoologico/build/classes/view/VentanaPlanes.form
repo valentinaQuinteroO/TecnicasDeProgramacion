@@ -411,11 +411,9 @@
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel10" min="-2" pref="190" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel9" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
-                              <Component id="jrbPlanVenenoso" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel9" alignment="0" min="-2" pref="190" max="-2" attributes="0"/>
+                          <Component id="jrbPlanVenenoso" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
+                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane3" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="29" max="32767" attributes="0"/>

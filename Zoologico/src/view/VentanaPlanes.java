@@ -664,12 +664,12 @@ public class VentanaPlanes extends javax.swing.JFrame {
         int cantidad = 0;
         int refrigerios = 0;
         float precio = 0;
-        
-        plan = new PlanGeneral(seleccionarPlan());
-        
         refrigerios = Integer.parseInt(jTextField_CantRefrig.getText());
         cantidad = Integer.parseInt(jTextField_CantBoletas.getText());
-        precio = plan.getPrecio()*cantidad + refrigerios*5000;
+        
+        boleta =  new Boleta(cantidad, "Plan General", seleccionarPlan());
+        
+        precio = boleta.getCostoTotal() + refrigerios*5000;
         
         jLabelTotalPagar.setText("$" + Float.toString(precio));
         
@@ -680,8 +680,6 @@ public class VentanaPlanes extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(VentanaPlanes.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        boleta =  new Boleta(cantidad, "Plan General", seleccionarPlan());
         boleta.setCostoTotal(precio);
         
         DeptoLogistica.ingresarBoleta(boleta);
