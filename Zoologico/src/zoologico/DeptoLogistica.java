@@ -1,4 +1,10 @@
 package zoologico;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import view.Index;
@@ -25,9 +31,6 @@ public class DeptoLogistica {
     }
     
     public static void ingresarAnimalDomestico(AnimalDomestico ad) throws IOException{
-//        AnimalDomestico ad = new AnimalDomestico(typing.readString("Ingrese el uso que le va a dar al animal: "),
-//                typing.readInt("Ingrese el código del animal doméstico: "), typing.readString("Ingrese el nombre: "),
-//                typing.readString("Ingrese la especie: "));
         listaAnimalesDomesticos.add(ad);
         System.out.println("Bienvenido, "+ad.toString());
         
@@ -53,16 +56,6 @@ public class DeptoLogistica {
     }
     
     public static void ingresarCliente(Cliente client) throws IOException{
-        
-//        String nombre = typing.readString("Ingrese el nombre del cliente: ");
-//        int id = typing.readInt("Ingrese la identificacion del cliente: ");
-//        
-//        String tipoBoleta = typing.readString("Ingrese el tipo de boleta (abono o plan) que desea: ");
-//        String tipoPlan = typing.readString("Ingrese el tipo de plan que va a escoger");
-//        int cantBol = typing.readInt("Ingrese la cantidad de boletas que quiere comprar.");
-        //Boleta bol = new Boleta(cantBol, tipoBoleta, tipoPlan);
-        
-        //Cliente client = new Cliente(nombre, id, bol.getCostoTotal());
         listaClientes.add(client);
         System.out.println("Bienvenido, " + client.toString());
     }
@@ -77,6 +70,32 @@ public class DeptoLogistica {
         int pOpcion = typing.readInt("Ingrese la contraseña para iniciar el sistema: ");
         return pOpcion;
     }
+    
+    public static void generarPdf() throws DocumentException{
+        Document documento = new Document();
+        try{
+            // Escribir el documento en un archivo
+            PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/Valentina/Desktop/prueba/pruebita.pdf"));
+            
+            // Abrir el documento
+            documento.open();
+            
+            // Agregar el párrafo al documento
+            String texto = "Hola mundo";
+            Paragraph parrafo = new Paragraph(texto);
+            documento.add(parrafo);
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Cerrar el documento
+            documento.close();
+        }
+    }
+    
+    
+    
     
     public static void evaluarOpciones(int pOpcion) throws IOException{
         

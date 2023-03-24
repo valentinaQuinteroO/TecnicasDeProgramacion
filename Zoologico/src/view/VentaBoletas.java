@@ -4,6 +4,11 @@
  */
 package view;
 
+import com.itextpdf.text.DocumentException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import zoologico.DeptoLogistica;
+
 /**
  *
  * @author Valentina
@@ -79,6 +84,11 @@ public class VentaBoletas extends javax.swing.JFrame {
 
         jBGenerarReporteVentas.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jBGenerarReporteVentas.setText("Generar Reporte");
+        jBGenerarReporteVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBGenerarReporteVentasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -169,6 +179,14 @@ public class VentaBoletas extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_jBAbonosActionPerformed
+
+    private void jBGenerarReporteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGenerarReporteVentasActionPerformed
+        try {
+            DeptoLogistica.generarPdf();
+        } catch (DocumentException ex) {
+            Logger.getLogger(VentaBoletas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jBGenerarReporteVentasActionPerformed
 
     /**
      * @param args the command line arguments

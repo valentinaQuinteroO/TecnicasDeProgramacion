@@ -7,7 +7,6 @@ package view;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import zoologico.Abono;
 import zoologico.Boleta;
 import zoologico.Cliente;
 import zoologico.DeptoLogistica;
