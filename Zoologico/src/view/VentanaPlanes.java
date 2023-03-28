@@ -596,6 +596,7 @@ public class VentanaPlanes extends javax.swing.JFrame {
 
         jButtonIrTiendaRegalos.setBackground(new java.awt.Color(102, 0, 102));
         jButtonIrTiendaRegalos.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jButtonIrTiendaRegalos.setForeground(new java.awt.Color(255, 255, 255));
         jButtonIrTiendaRegalos.setText("Ir a la tienda de recuerdos");
         jButtonIrTiendaRegalos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -692,7 +693,8 @@ public class VentanaPlanes extends javax.swing.JFrame {
             Logger.getLogger(VentanaPlanes.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        boleta.setValorVenta(boleta.getValorVenta() + refrigerios*5000);
+        boleta.setValorVenta(boleta.getValorVenta() + refrigerios*5000 + ventanaRecuerdos.getCosto());
+        ventanaRecuerdos.setCosto(0);
         boleta.setCostoTotal(precio);
         DepartamentoLogistica.ingresarBoleta(boleta);
         

@@ -88,7 +88,7 @@ public class DepartamentoLogistica {
     try {
         
         // Creo una instancia de PdfWriter y asociarla con el documento
-        PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/Valentina/Desktop/GitHub/TecnicasDeProgramacion/Zoologico/src/documentacion/reporteVentas.pdf"));
+        PdfWriter.getInstance(documento, new FileOutputStream("src/documentacion/reporteVentas.pdf"));
         
         // Abrir el documento
         documento.open();
@@ -98,7 +98,7 @@ public class DepartamentoLogistica {
         tablaImagenTexto.setWidthPercentage(100);
 
         // Agrego la celda de la imagen
-        String rutaImagen = "C:/Users/Valentina/Desktop/GitHub/TecnicasDeProgramacion/Zoologico/src/images/ZooLogo.png";
+        String rutaImagen = "src/images/ZooLogo.png";
         Image foto = Image.getInstance(new File(rutaImagen).getAbsolutePath());
         foto.scaleToFit(250, 250);
         PdfPCell celdaImagen = new PdfPCell(foto);
