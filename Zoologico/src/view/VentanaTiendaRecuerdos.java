@@ -7,7 +7,6 @@ package view;
 import tienda_de_recuerdos.Camiseta;
 import tienda_de_recuerdos.Juguete;
 import tienda_de_recuerdos.Llavero;
-import utilidades.VariablesCompartidas;
 
 /**
  *
@@ -18,9 +17,8 @@ public class VentanaTiendaRecuerdos extends javax.swing.JFrame {
     /**
      * Creates new form VentanaTiendaRecuerdos
      */
-    VariablesCompartidas variableCompartida;
     VentanaPlanes ventanaPlanes;
-    private float costo = 0;
+    public static float costo = 0;
     public VentanaTiendaRecuerdos() {
         initComponents();
     }
@@ -58,7 +56,8 @@ public class VentanaTiendaRecuerdos extends javax.swing.JFrame {
 
         jCheckBoxLlavero.setBackground(new java.awt.Color(0, 71, 0));
         jCheckBoxLlavero.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jCheckBoxLlavero.setText("LLAVERO");
+        jCheckBoxLlavero.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBoxLlavero.setText("LLAVERO ($10000)");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/llavero.png"))); // NOI18N
 
@@ -67,11 +66,11 @@ public class VentanaTiendaRecuerdos extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jCheckBoxLlavero, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jCheckBoxLlavero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 35, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -88,7 +87,8 @@ public class VentanaTiendaRecuerdos extends javax.swing.JFrame {
 
         jCheckBoxJuguete.setBackground(new java.awt.Color(0, 71, 0));
         jCheckBoxJuguete.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jCheckBoxJuguete.setText("JUGUETE");
+        jCheckBoxJuguete.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBoxJuguete.setText("JUGUETE ($20000)");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/juguete.png"))); // NOI18N
 
@@ -99,8 +99,8 @@ public class VentanaTiendaRecuerdos extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBoxJuguete, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBoxJuguete, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -117,7 +117,8 @@ public class VentanaTiendaRecuerdos extends javax.swing.JFrame {
 
         jCheckBoxCamiseta.setBackground(new java.awt.Color(0, 71, 0));
         jCheckBoxCamiseta.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jCheckBoxCamiseta.setText("CAMISETA");
+        jCheckBoxCamiseta.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBoxCamiseta.setText("CAMISETA ($50000)");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/camiseta.png"))); // NOI18N
 
@@ -130,7 +131,7 @@ public class VentanaTiendaRecuerdos extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jCheckBoxCamiseta, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCheckBoxCamiseta, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -189,33 +190,32 @@ public class VentanaTiendaRecuerdos extends javax.swing.JFrame {
 
         jLabelCosto.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabelCosto.setForeground(new java.awt.Color(51, 51, 51));
-        jLabelCosto.setText("0");
+        jLabelCosto.setText("$ 0");
+        jLabelCosto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(176, 176, 176)
+                .addGap(31, 31, 31)
                 .addComponent(jButtonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
+                .addGap(100, 100, 100)
+                .addComponent(jLabelCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jLabelCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonAtras, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelCosto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonAtras, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE))
                     .addComponent(jButtonAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelCosto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -232,38 +232,38 @@ public class VentanaTiendaRecuerdos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtrasActionPerformed
-        ventanaPlanes = new VentanaPlanes();
-        ventanaPlanes.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonAtrasActionPerformed
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
-        variableCompartida = new VariablesCompartidas();
+        
         Camiseta camiseta =  new Camiseta();
         Juguete juguete = new Juguete();
         Llavero llavero = new Llavero();
+        costo = 0;
+        
         if(jCheckBoxLlavero.isSelected()){
-            variableCompartida.setCostoTiendaDeRecuerdos(variableCompartida.getCostoTiendaDeRecuerdos() + llavero.getPrecio());
-            costo = costo + llavero.getPrecio();
+            costo = costo + llavero.getPrecio();  
         }
+        
         if(jCheckBoxJuguete.isSelected()){
-             variableCompartida.setCostoTiendaDeRecuerdos(variableCompartida.getCostoTiendaDeRecuerdos() + juguete.getPrecio());
              costo = costo + juguete.getPrecio();
         }
+        
         if(jCheckBoxCamiseta.isSelected()){
-            variableCompartida.setCostoTiendaDeRecuerdos(variableCompartida.getCostoTiendaDeRecuerdos() + camiseta.getPrecio());
             costo = costo + camiseta.getPrecio();
         }
         
-        jLabelCosto.setText(Float.toString(costo));
+        jLabelCosto.setText("$" + Float.toString(costo));
         
+        limpiarTodo();
     }//GEN-LAST:event_jButtonAgregarActionPerformed
 
 

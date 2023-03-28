@@ -10,8 +10,6 @@ import java.util.logging.Logger;
 import boleteria.Boleta;
 import cliente.Cliente;
 import zoologico.DepartamentoLogistica;
-import boleteria.PlanGeneral;
-import utilidades.VariablesCompartidas;
 
 /**
  *
@@ -19,10 +17,10 @@ import utilidades.VariablesCompartidas;
  */
 public class VentanaPlanes extends javax.swing.JFrame {
 
-    PlanGeneral plan;
-    Boleta boleta;
-    Cliente client;
-    VariablesCompartidas variableCompartida;
+    private Boleta boleta;
+    private  Cliente client;
+    private VentanaTiendaRecuerdos ventanaRecuerdos;
+    
     /**
      * Creates new form VentanaPlanes
      */
@@ -675,29 +673,27 @@ public class VentanaPlanes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jBVenderBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVenderBoletaActionPerformed
-        int cantidad = 0;
+        int cantidad    = 0;
         int refrigerios = 0;
-        float precio = 0;
-        refrigerios = Integer.parseInt(jTextField_CantRefrig.getText());
-        cantidad = Integer.parseInt(jTextField_CantBoletas.getText());
-        VentanaTiendaRecuerdos  ventanaRecuerdos = new VentanaTiendaRecuerdos();
-        boleta =  new Boleta(cantidad, "Plan General", seleccionarPlan());
-        variableCompartida = new VariablesCompartidas();
+        float precio    = 0;
+        refrigerios     = Integer.parseInt(jTextField_CantRefrig.getText());
+        cantidad        = Integer.parseInt(jTextField_CantBoletas.getText());
+        ventanaRecuerdos    = new VentanaTiendaRecuerdos();
+        boleta              =  new Boleta(cantidad, "Plan General", seleccionarPlan());
+        
         
         precio = boleta.getCostoTotal() + refrigerios*5000  + ventanaRecuerdos.getCosto();
-        ventanaRecuerdos.setCosto(0);
         jLabelTotalPagar.setText("$" + Float.toString(precio));
         
         client = new Cliente(jTextField_Nombre.getText(), Integer.parseInt(jTextField_Identificacion.getText()), precio);
-        
         try {
             DepartamentoLogistica.ingresarCliente(client);
         } catch (IOException ex) {
             Logger.getLogger(VentanaPlanes.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         boleta.setValorVenta(boleta.getValorVenta() + refrigerios*5000);
         boleta.setCostoTotal(precio);
-        
         DepartamentoLogistica.ingresarBoleta(boleta);
         
     }//GEN-LAST:event_jBVenderBoletaActionPerformed
@@ -708,7 +704,7 @@ public class VentanaPlanes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButtonIrTiendaRegalosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIrTiendaRegalosActionPerformed
-        VentanaTiendaRecuerdos ventanaRecuerdos = new VentanaTiendaRecuerdos();
+        ventanaRecuerdos = new VentanaTiendaRecuerdos();
         ventanaRecuerdos.setVisible(true);
     }//GEN-LAST:event_jButtonIrTiendaRegalosActionPerformed
     
@@ -737,6 +733,9 @@ public class VentanaPlanes extends javax.swing.JFrame {
         jTextField_CantRefrig.setText("");
         jLabelTotalPagar.setText("$0");
     }
+
+    
+    
     
     
     
