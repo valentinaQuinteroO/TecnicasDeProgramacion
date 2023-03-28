@@ -1,4 +1,4 @@
-package zoologico;
+package boleteria;
 
 public class Abono extends Plan {
     

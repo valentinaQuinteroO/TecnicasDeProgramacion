@@ -7,10 +7,11 @@ package view;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import zoologico.Boleta;
-import zoologico.Cliente;
-import zoologico.DeptoLogistica;
-import zoologico.PlanGeneral;
+import boleteria.Boleta;
+import cliente.Cliente;
+import zoologico.DepartamentoLogistica;
+import boleteria.PlanGeneral;
+import utilidades.VariablesCompartidas;
 
 /**
  *
@@ -21,6 +22,7 @@ public class VentanaPlanes extends javax.swing.JFrame {
     PlanGeneral plan;
     Boleta boleta;
     Cliente client;
+    VariablesCompartidas variableCompartida;
     /**
      * Creates new form VentanaPlanes
      */
@@ -91,6 +93,7 @@ public class VentanaPlanes extends javax.swing.JFrame {
         jBVenderBoleta = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButtonIrTiendaRegalos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -271,10 +274,9 @@ public class VentanaPlanes extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jrbPlanVenenoso, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jrbPlanVenenoso, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -594,6 +596,15 @@ public class VentanaPlanes extends javax.swing.JFrame {
             }
         });
 
+        jButtonIrTiendaRegalos.setBackground(new java.awt.Color(102, 0, 102));
+        jButtonIrTiendaRegalos.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jButtonIrTiendaRegalos.setText("Ir a la tienda de recuerdos");
+        jButtonIrTiendaRegalos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIrTiendaRegalosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -601,6 +612,7 @@ public class VentanaPlanes extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonIrTiendaRegalos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBVenderBoleta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -612,12 +624,14 @@ public class VentanaPlanes extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jBVenderBoleta, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jBVenderBoleta, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonIrTiendaRegalos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(58, 58, 58))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -666,24 +680,25 @@ public class VentanaPlanes extends javax.swing.JFrame {
         float precio = 0;
         refrigerios = Integer.parseInt(jTextField_CantRefrig.getText());
         cantidad = Integer.parseInt(jTextField_CantBoletas.getText());
-        
+        VentanaTiendaRecuerdos  ventanaRecuerdos = new VentanaTiendaRecuerdos();
         boleta =  new Boleta(cantidad, "Plan General", seleccionarPlan());
+        variableCompartida = new VariablesCompartidas();
         
-        precio = boleta.getCostoTotal() + refrigerios*5000;
-        
+        precio = boleta.getCostoTotal() + refrigerios*5000  + ventanaRecuerdos.getCosto();
+        ventanaRecuerdos.setCosto(0);
         jLabelTotalPagar.setText("$" + Float.toString(precio));
         
         client = new Cliente(jTextField_Nombre.getText(), Integer.parseInt(jTextField_Identificacion.getText()), precio);
         
         try {
-            DeptoLogistica.ingresarCliente(client);
+            DepartamentoLogistica.ingresarCliente(client);
         } catch (IOException ex) {
             Logger.getLogger(VentanaPlanes.class.getName()).log(Level.SEVERE, null, ex);
         }
         boleta.setValorVenta(boleta.getValorVenta() + refrigerios*5000);
         boleta.setCostoTotal(precio);
         
-        DeptoLogistica.ingresarBoleta(boleta);
+        DepartamentoLogistica.ingresarBoleta(boleta);
         
     }//GEN-LAST:event_jBVenderBoletaActionPerformed
 
@@ -691,6 +706,11 @@ public class VentanaPlanes extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         limpiarTodo();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButtonIrTiendaRegalosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIrTiendaRegalosActionPerformed
+        VentanaTiendaRecuerdos ventanaRecuerdos = new VentanaTiendaRecuerdos();
+        ventanaRecuerdos.setVisible(true);
+    }//GEN-LAST:event_jButtonIrTiendaRegalosActionPerformed
     
     private String seleccionarPlan(){
         String tipoPlan = null;
@@ -762,6 +782,7 @@ public class VentanaPlanes extends javax.swing.JFrame {
     private javax.swing.JButton jBVenderBoleta;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonIrTiendaRegalos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

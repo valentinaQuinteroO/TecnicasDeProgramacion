@@ -1,4 +1,4 @@
-package zoologico;
+package boleteria;
 
 public class Plan {
     protected float precio;

@@ -1,4 +1,6 @@
-package zoologico;
+package animales;
+
+import animales.Animal;
 
 /**
  *

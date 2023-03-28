@@ -1,4 +1,4 @@
-package zoologico;
+package boleteria;
 
 public class PlanGeneral extends Plan{
     private String temaPlan;

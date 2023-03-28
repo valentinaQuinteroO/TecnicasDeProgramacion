@@ -7,7 +7,7 @@ package view;
 import com.itextpdf.text.DocumentException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import zoologico.DeptoLogistica;
+import zoologico.DepartamentoLogistica;
 
 /**
  *
@@ -182,7 +182,7 @@ public class VentaBoletas extends javax.swing.JFrame {
 
     private void jBGenerarReporteVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGenerarReporteVentasActionPerformed
         try {
-            DeptoLogistica.generarPdf();
+            DepartamentoLogistica.generarPdf();
         } catch (DocumentException ex) {
             Logger.getLogger(VentaBoletas.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -1,4 +1,12 @@
 package zoologico;
+
+import cliente.Cliente;
+import boleteria.PlanGeneral;
+import boleteria.Abono;
+import boleteria.Boleta;
+import utilidades.Typing;
+import animales.AnimalSalvaje;
+import animales.AnimalDomestico;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Image;
@@ -16,15 +24,15 @@ import view.Index;
  *
  * @author Valentina
  */
-public class DeptoLogistica {
-    private static final Typing typing = new Typing();  // Una constante
+public class DepartamentoLogistica {
+    private static final Typing typing = new Typing();
     private static ArrayList<AnimalDomestico> listaAnimalesDomesticos = new ArrayList<>();
     private static ArrayList<AnimalSalvaje> listaAnimalesSalvajes = new ArrayList<>();
     private static ArrayList<Boleta> listaBoletas = new ArrayList<>();
     private static ArrayList<Cliente> listaClientes = new ArrayList<>();
     
     
-    public static void admZoo() throws IOException{    // Es estático porque sólo se tiene un departamento de logística 
+    public static void administracionZoo() throws IOException{    // Es estático porque sólo se tiene un departamento de logística 
         int opcion = ingresarContraseña();
         evaluarOpciones(opcion);
     }    
@@ -79,18 +87,17 @@ public class DeptoLogistica {
     Document documento = new Document();
     try {
         
-        // Crear una instancia de PdfWriter y asociarla con el documento
-        PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/Valentina/Desktop/GitHub/TecnicasDeProgramacion/Zoologico/Documentacion/reporteVentas.pdf"));
-        
+        // Creo una instancia de PdfWriter y asociarla con el documento
+        PdfWriter.getInstance(documento, new FileOutputStream("C:/Users/Valentina/Desktop/GitHub/TecnicasDeProgramacion/Zoologico/src/documentacion/reporteVentas.pdf"));
         
         // Abrir el documento
         documento.open();
         
-        // Crear la tabla de la imagen y el texto
+        // Creo la tabla de la imagen y el texto
         PdfPTable tablaImagenTexto = new PdfPTable(2);
         tablaImagenTexto.setWidthPercentage(100);
 
-        // Agregar la celda de la imagen
+        // Agrego la celda de la imagen
         String rutaImagen = "C:/Users/Valentina/Desktop/GitHub/TecnicasDeProgramacion/Zoologico/src/images/ZooLogo.png";
         Image foto = Image.getInstance(new File(rutaImagen).getAbsolutePath());
         foto.scaleToFit(250, 250);
@@ -100,7 +107,7 @@ public class DeptoLogistica {
         celdaImagen.setHorizontalAlignment(0);
         tablaImagenTexto.addCell(celdaImagen);
 
-        // Agregar la celda del texto
+        // Agrego la celda del texto
         Paragraph texto = new Paragraph("Zoológico ilógico\nEl Carmen de Viboral, Antioquia\ntel: +57 6045666985");
         PdfPCell celdaTexto = new PdfPCell(texto);
         celdaTexto.setBorder(Rectangle.NO_BORDER);
@@ -108,18 +115,18 @@ public class DeptoLogistica {
         celdaTexto.setHorizontalAlignment(20);
         tablaImagenTexto.addCell(celdaTexto);
 
-        // Agregar espacio vertical entre la tabla de la imagen y el texto
+        // Agrego espacio vertical entre la tabla de la imagen y el texto
         documento.add(new Paragraph(20, " "));
 
-        // Agregar la tabla de la imagen y el texto al documento
+        // Agrego la tabla de la imagen y el texto al documento
         documento.add(tablaImagenTexto);
 
 
 
-        // Crear la tablaVentas
+        // Creo la tablaVentas
         PdfPTable tablaVentas = new PdfPTable(6);
         
-        // Agregar las celdas de la primera fila
+        // Agrego las celdas de la primera fila
         tablaVentas.addCell("PLAN");
         tablaVentas.addCell("VALOR");
         tablaVentas.addCell("CANTIDAD");
@@ -127,25 +134,25 @@ public class DeptoLogistica {
         tablaVentas.addCell("DESCUENTOS");
         tablaVentas.addCell("TOTAL");
         
-        // Agregar los datos que me pide el reporte
+        // Agrego los datos que me pide el reporte
         for(int i = 0; i < listaClientes.size(); i++){
             tablaVentas.addCell(listaBoletas.get(i).getTipoPlan());
-            tablaVentas.addCell(String.valueOf(listaBoletas.get(i).getValorUnidad()));
+            tablaVentas.addCell(String.valueOf("$"+listaBoletas.get(i).getValorUnidad()));
             tablaVentas.addCell(String.valueOf(listaBoletas.get(i).getCantBoletas()));
-            tablaVentas.addCell(String.valueOf(listaBoletas.get(i).getValorVenta()));
-            tablaVentas.addCell(String.valueOf(listaBoletas.get(i).getDescuento()));
-            tablaVentas.addCell(String.valueOf(listaBoletas.get(i).getCostoTotal()));
+            tablaVentas.addCell(String.valueOf("$"+listaBoletas.get(i).getValorVenta()));
+            tablaVentas.addCell(String.valueOf(listaBoletas.get(i).getDescuento() + "%"));
+            tablaVentas.addCell(String.valueOf("$"+listaBoletas.get(i).getCostoTotal()));
         }
         
         
-        // Agregar un espacio en blanco entre el encabezado y la tablaVentas
+        // Agrego un espacio en blanco entre el encabezado y la tablaVentas
         documento.add(new Paragraph(50, " "));
-        // Agregar la tablaVentas al documento
+        // Agrego la tablaVentas al documento
         documento.add(tablaVentas);
     } catch (Exception e) {
         e.printStackTrace();
     } finally {
-        // Cerrar el documento
+        // Cierro el documento
         documento.close();
     }
 }

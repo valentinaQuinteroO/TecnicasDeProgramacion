@@ -1,4 +1,4 @@
-package zoologico;
+package animales;
 
 /**
  *

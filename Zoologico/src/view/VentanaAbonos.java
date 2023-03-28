@@ -7,9 +7,9 @@ package view;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import zoologico.Boleta;
-import zoologico.Cliente;
-import zoologico.DeptoLogistica;
+import boleteria.Boleta;
+import cliente.Cliente;
+import zoologico.DepartamentoLogistica;
 
 /**
  *
@@ -322,11 +322,11 @@ public class VentanaAbonos extends javax.swing.JFrame {
         client = new Cliente(jTextField_Nombre.getText(), Integer.parseInt(jTextField_Identificacion.getText()), boleta.getCostoTotal());
         
         try {
-            DeptoLogistica.ingresarCliente(client);
+            DepartamentoLogistica.ingresarCliente(client);
         } catch (IOException ex) {
             Logger.getLogger(VentanaAbonos.class.getName()).log(Level.SEVERE, null, ex);
         }
-        DeptoLogistica.ingresarBoleta(boleta);
+        DepartamentoLogistica.ingresarBoleta(boleta);
         jLabelTotalPagar.setText(Float.toString(boleta.getCostoTotal()));
     }//GEN-LAST:event_jBVenderBoletaActionPerformed
 

@@ -7,9 +7,9 @@ package view;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import zoologico.AnimalDomestico;
-import zoologico.AnimalSalvaje;
-import zoologico.DeptoLogistica;
+import animales.AnimalDomestico;
+import animales.AnimalSalvaje;
+import zoologico.DepartamentoLogistica;
 
 
 /**
@@ -426,14 +426,14 @@ public class VentanaAnimal extends javax.swing.JFrame {
         if(jRadioButtonAnimalDomestico.isSelected()){
             AnimalDomestico animalDomestico = new AnimalDomestico(jTextUsoDomestico.getText(), Integer.parseInt(jTextCodigoDomestico.getText()), jTextNombreAnimalDomestico.getText(), jTextEspecieDomestico.getText());
             try {
-                DeptoLogistica.ingresarAnimalDomestico(animalDomestico);
+                DepartamentoLogistica.ingresarAnimalDomestico(animalDomestico);
             } catch (IOException ex) {
                 Logger.getLogger(VentanaAnimal.class.getName()).log(Level.SEVERE, null, ex);
             }
         }else if(jRadioButtonAnimalSalvaje.isSelected()){
             AnimalSalvaje animalSalvaje = new AnimalSalvaje(jTextPeligrosidadSalvaje.getText(), Integer.parseInt(jTextCodigoSalvaje.getText()), jTextNombreAnimalSalvaje.getText(), jTextEspecieSalvaje.getText());
             try {
-                DeptoLogistica.ingresarAnimalSalvaje(animalSalvaje);
+                DepartamentoLogistica.ingresarAnimalSalvaje(animalSalvaje);
             } catch (IOException ex) {
                 Logger.getLogger(VentanaAnimal.class.getName()).log(Level.SEVERE, null, ex);
             }

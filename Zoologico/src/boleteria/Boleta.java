@@ -1,4 +1,4 @@
-package zoologico;
+package boleteria;
 
 public class Boleta {
     private int cantBoletas;
@@ -18,9 +18,8 @@ public class Boleta {
         this.descuento = asignarDescuento(cantBoletas, tipoBoleta);
         this.valorUnidad = precioPortipo(tipoPlan, tipoBoleta, cantBoletas);
         this.valorVenta = asignarValorVenta(tipoBoleta, cantBoletas, valorUnidad);
-        this.costoTotal = (valorUnidad * cantBoletas) - ((valorUnidad * cantBoletas)*(descuento / 100));
+        this.costoTotal = (valorVenta) - ((valorVenta)*(descuento / 100));
     }
-
     
     public static float precioPortipo(String tipoPlan, String tipoBoleta, int cantBoletas){
         float precio = 0;
@@ -46,7 +45,7 @@ public class Boleta {
         return valor;
         
     }
-
+    
     public static float asignarDescuento(int cantBoletas, String tipoBoleta){
         float dcto = 0;
         if(tipoBoleta.equalsIgnoreCase("plan") || tipoBoleta.equalsIgnoreCase("plan general")){

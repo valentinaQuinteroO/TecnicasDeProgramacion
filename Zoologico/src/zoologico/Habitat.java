@@ -1,6 +1,7 @@
 package zoologico;
 
 
+import animales.Animal;
 import java.util.ArrayList;
 import java.util.List;
 
