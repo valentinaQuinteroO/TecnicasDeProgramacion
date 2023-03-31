@@ -8,7 +8,7 @@ import animales.AnimalDomestico;
 import com.itextpdf.text.DocumentException;
 import java.io.IOException;
 import java.util.ArrayList;
-import pdf.Pdf;
+import utilidades.Pdf;
 import view.Index;
 /**
  *

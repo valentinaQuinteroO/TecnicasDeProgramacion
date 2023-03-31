@@ -1,4 +1,4 @@
-package pdf;
+package utilidades;
 
 import boleteria.Boleta;
 import com.itextpdf.text.BadElementException;
