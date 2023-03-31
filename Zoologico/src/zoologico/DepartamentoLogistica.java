@@ -8,7 +8,7 @@ import animales.AnimalDomestico;
 import com.itextpdf.text.DocumentException;
 import java.io.IOException;
 import java.util.ArrayList;
-import pdf.GenerarPdf;
+import pdf.Pdf;
 import view.Index;
 /**
  *
@@ -61,7 +61,7 @@ public class DepartamentoLogistica {
     }
     
     public static void generarPdf() throws DocumentException{
-        GenerarPdf generarPdf = new GenerarPdf(listaBoletas);
+        Pdf nuevoPdf = new Pdf(listaBoletas);
         
     }
 

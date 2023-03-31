@@ -19,7 +19,7 @@ import java.util.ArrayList;
  *
  * @author Valentina
  */
-public class GenerarPdf {
+public class Pdf {
     
         
     /** La clase GenerarPdf
@@ -28,7 +28,7 @@ public class GenerarPdf {
      * @param listaBoletas
      * @throws DocumentException 
      */
-    public GenerarPdf(ArrayList<Boleta> listaBoletas) throws DocumentException {
+    public Pdf(ArrayList<Boleta> listaBoletas) throws DocumentException {
         Document documento = new Document();
         try {
             PdfWriter.getInstance(documento, new FileOutputStream("src/documentacion/reporteVentas.pdf"));
