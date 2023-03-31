@@ -7,10 +7,17 @@ public class Boleta {
     private float valorUnidad;
     private float descuento;
     private float valorVenta;
-    
+
     public Boleta() {
     }
 
+    /**
+     * La clase boleta mostrará diferentes precios 
+     * dado un tipo de boleta, de plan y una cantidad de boletas.
+     * @param cantBoletas
+     * @param tipoBoleta
+     * @param tipoPlan 
+     */
     public Boleta(int cantBoletas, String tipoBoleta, String tipoPlan) {
         this.cantBoletas = cantBoletas;
         this.tipoBoleta = tipoBoleta;

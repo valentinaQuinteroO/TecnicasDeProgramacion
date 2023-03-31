@@ -6,6 +6,11 @@ public class PlanGeneral extends Plan{
     public PlanGeneral() {
     }
     
+    /**
+     * Los planes son las boletas generales que compran los clientes
+     * Estos varían su precio y duración debido a qué clase de plan es
+     * @param temaPlan 
+     */
     public PlanGeneral(String temaPlan) {
         super();
         this.temaPlan = temaPlan;

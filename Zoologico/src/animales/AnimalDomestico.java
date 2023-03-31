@@ -9,6 +9,11 @@ import animales.Animal;
 public class AnimalDomestico extends Animal{
     private String uso; 
 
+    /**
+     * Animal doméstico hereda de la clase Animal
+     * Tiene todos sus atributos adicionando el uso que
+     * se le puede dar a cada animal doméstico.
+     */
     public AnimalDomestico() {
     }
 

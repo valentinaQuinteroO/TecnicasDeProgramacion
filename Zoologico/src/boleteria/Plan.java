@@ -8,10 +8,15 @@ public class Plan {
     public Plan() {
     }
 
-    public Plan(float precio, int duracion, String souvenir) {
+    /**
+     * Los Planes pueden ser Abonos o Plabes generales
+     * Cada uno de estos va a tener un precio y una duración
+     * @param precio
+     * @param duracion
+     */
+    public Plan(float precio, int duracion) {
         this.precio = precio;
         this.duracion = duracion;
-        this.souvenir = souvenir;
     }
 
     public float getPrecio() {
@@ -30,12 +35,4 @@ public class Plan {
         this.duracion = duracion;
     }
 
-    public String getSouvenir() {
-        return souvenir;
-    }
-
-    public void setSouvenir(String souvenir) {
-        this.souvenir = souvenir;
-    }
-    
 }

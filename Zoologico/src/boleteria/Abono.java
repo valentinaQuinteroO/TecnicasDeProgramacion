@@ -5,10 +5,19 @@ public class Abono extends Plan {
     private String tipoPlan;
     private int cantPersonas;
 
+ 
     public Abono() {
         
     }
-
+       /**
+     * La clase Abono hereda de la Clase plan
+     * Los abonos son precios especiales que tiene el zoológico
+     * con algunas instituciones educativas o empresariales.
+     * Los Abonos tienen diferentes precios dado un tipo de 
+     * plan y cierta cantidad de personas
+     * @param tipoPlan
+     * @param cantPersonas 
+     */
     public Abono(String tipoPlan, int cantPersonas) {
         super(); // llamada al constructor de la superclase Plan
         this.tipoPlan = tipoPlan;
@@ -29,7 +38,6 @@ public class Abono extends Plan {
                 setPrecio(350000);
             }
             setDuracion(3);
-            setSouvenir("Jirafa de juguete");
         } else if(tipoPlan.equalsIgnoreCase("Plan Empresarial")){
             if(cantPersonas > 0 && cantPersonas < 20){
                 setPrecio(150000);
@@ -39,7 +47,6 @@ public class Abono extends Plan {
                 setPrecio(400000);
             }
             setDuracion(4);
-            setSouvenir("Ballena de juguete");
         }
     }
     

@@ -9,6 +9,11 @@ import animales.Animal;
 public class AnimalSalvaje extends Animal {
     private String nivelPeligrosidad;
 
+    /**
+     * Animal salvaje hereda de la clase Animal
+     * Tiene todos sus atributos adicionando la peligrosidad
+     * que posee cada animal salvaje.
+     */
     public AnimalSalvaje() {
     }
 
