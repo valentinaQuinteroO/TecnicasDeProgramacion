@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Proyecto Final</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+
+    <body id="page-top">
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Bienvenido a mi primera página</div>
+                <div class="masthead-heading text-uppercase">Cliente</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#cliente">Ingresar datos</a>
+            </div>
+        </header>    
+
+        <!-- Datos del cliente-->
+        <section class="page-section" id="cliente">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Ingrese sus datos como cliente:</h2>
+                </div>
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <div class="row align-items-stretch mb-5">
+                            <form>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="name" type="text" placeholder="Ingresar usuario*" data-sb-validations="required" />
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere un nombre.</div>
+
+                                        <input class="form-control" id="id" type="text" placeholder="Ingresar cédula*" data-sb-validations="required" />
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">Se requiere una cédula.</div>
+
+                                        <input type="submit" value="Guardar" class="btn btn-primary btn-xl text-uppercase">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Tours disponibles-->
+        <section class="page-section bg-light" id="tour">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Tours</h2>
+                    <h3 class="section-subheading text-muted">Seleccione los tours que quiere tomar</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#tourModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Tour Jardín</div>
+                                <div class="portfolio-caption-subheading text-muted">$50000 por persona</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 2-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#tourModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Tour Cocorná</div>
+                                <div class="portfolio-caption-subheading text-muted">$70000 por persona</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <!-- Portfolio item 3-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#tourModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Tour Sonson</div>
+                                <div class="portfolio-caption-subheading text-muted">$40000 por persona</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <!-- Portfolio item 4-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#tourModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Tour Doradal</div>
+                                <div class="portfolio-caption-subheading text-muted">$60000 por persona</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <!-- Portfolio item 5-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#tourModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Tour Guatapé</div>
+                                <div class="portfolio-caption-subheading text-muted">$55000 por persona</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Portfolio item 6-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#tourModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Tour El Carmen de Viboral</div>
+                                <div class="portfolio-caption-subheading text-muted">$40000 por persona</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Tour item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="tourModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Tour por Jardín</h2>
+                                    <p class="item-intro text-muted">Son 5 horas de una visita guiada a los lugares más emblemáticos de Jardín.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
+                                    <p>Ingrese el número de personas que comprarán el tour:</p>
+                                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                        <div class="row align-items-stretch mb-5">
+                                                <form>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="toursJardin" type="number" placeholder="Ingresar el número de boletas para el tour: *" data-sb-validations="required" />
+                                                            <div class="invalid-feedback" data-sb-feedback="toursJardin:required">Se requiere un número.</div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="submit">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tour item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="tourModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Tour por Cocorná</h2>
+                                    <p class="item-intro text-muted">Son 5 horas de una visita guiada por varios ríos de Cocorná. Incluye parapente o Almuerzo.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
+                                    <p>Ingrese el número de personas que comprarán el tour:</p>
+                                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                        <div class="row align-items-stretch mb-5">
+                                                <form>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="toursCocorna" type="number" placeholder="Ingresar el número de boletas para el tour: *" data-sb-validations="required" />
+                                                            <div class="invalid-feedback" data-sb-feedback="toursCocorna:required">Se requiere un número.</div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="submit">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tour item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="tourModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Tour por Cocorná</h2>
+                                    <p class="item-intro text-muted">Son 5 horas de una visita guiada por edificios tradicionales de Sonson. Incluye Almuerzo.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
+                                    <p>Ingrese el número de personas que comprarán el tour:</p>
+                                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                        <div class="row align-items-stretch mb-5">
+                                                <form>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="toursSonson" type="number" placeholder="Ingresar el número de boletas para el tour: *" data-sb-validations="required" />
+                                                            <div class="invalid-feedback" data-sb-feedback="toursSonson:required">Se requiere un número.</div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="submit">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tour item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="tourModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Tour por Doradal</h2>
+                                    <p class="item-intro text-muted">Son 5 horas de una visita guiada por el pueblo y parques icónicos.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
+                                    <p>Ingrese el número de personas que comprarán el tour:</p>
+                                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                        <div class="row align-items-stretch mb-5">
+                                                <form>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="toursDoradal" type="number" placeholder="Ingresar el número de boletas para el tour: *" data-sb-validations="required" />
+                                                            <div class="invalid-feedback" data-sb-feedback="toursDoradal:required">Se requiere un número.</div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="submit">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tour item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="tourModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Tour por Guatapé</h2>
+                                    <p class="item-intro text-muted">Son 5 horas de una visita guiada por los lugares más especiales de Guatapé.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
+                                    <p>Ingrese el número de personas que comprarán el tour:</p>
+                                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                        <div class="row align-items-stretch mb-5">
+                                                <form>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="toursGuatape" type="number" placeholder="Ingresar el número de boletas para el tour: *" data-sb-validations="required" />
+                                                            <div class="invalid-feedback" data-sb-feedback="toursGuatape:required">Se requiere un número.</div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="submit">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tour item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="tourModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Tour por el Carmen de Viboral</h2>
+                                    <p class="item-intro text-muted">Son 5 horas de una visita guiada en los sitios más especiales de este pueblo. Incluye Almuerzo.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
+                                    <p>Ingrese el número de personas que comprarán el tour:</p>
+                                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                        <div class="row align-items-stretch mb-5">
+                                                <form>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <input class="form-control" id="toursCarmen" type="number" placeholder="Ingresar el número de boletas para el tour: *" data-sb-validations="required" />
+                                                            <div class="invalid-feedback" data-sb-feedback="toursCarmen:required">Se requiere un número.</div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="submit">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+
+
+
+</html>
