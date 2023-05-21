@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -19,74 +20,86 @@
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <!-- Logo-->
             <div class="container">
                 <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Pueblitos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a></li>
+                
+            <!-- Carrito-->
+            <div class="container-icon">
+				<div class="container-cart-icon">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="icon-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+						/>
+					</svg>
+					<div class="count-products">
+						<span id="contador-productos">0</span>
+					</div>
+				</div>
 
-                    </ul>
-                </div>
-            </div>
+				<div class="container-cart-products hidden-cart">
+					<div class="row-product hidden">
+						<div class="cart-product">
+							<div class="info-cart-product">
+								
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="icon-close"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<div class="cart-total hidden">
+						<h3>Total:</h3>
+						<span class="total-pagar">$200</span>
+					</div>
+					<p class="cart-empty">El carrito está vacío</p>
+				</div>
+			</div>
         </nav>
         
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Bienvenido a mi primera página</div>
                 <div class="masthead-heading text-uppercase">Pueblitos de Antioquia</div>
+                <div class="masthead-subheading">Pueblitos de Antioquia nace con la intención de compartir con el mundo los encantadores pueblitos que vale la pena visitar. En esta página, te ofrecemos la oportunidad de descubrir los mejores destinos en Antioquia y vivir experiencias turísticas inolvidables. Explora nuestra selección de los pueblitos más destacados y reserva emocionantes tours que te cautivarán.</div>
+                <h3></h3>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#portfolio">Muéstrame Pueblitos</a>
             </div>
         </header>
-
-        <!-- Services
-        <section class="page-section" id="services">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">E-Commerce</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                </div>
-            </div>
-        </section>-->
         
         <!-- Portfolio Grid-->
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Pueblitos</h2>
-                    <h3 class="section-subheading text-muted">En esta sección puedes ver algunos pueblitos del departamento de Antioquia.</h3>
+                    <h1 class="section-heading text-uppercase">Pueblitos</h1>
+                    <h3 class="section-subheading text-muted">En esta sección puedes ver algunos pueblitos del departamento de Antioquia, y comprar tours de tu interés. También puedes observar una descripción del tour al dar click a la imagen del pueblito en cuestión. </h3>
                 </div>
+
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <!-- Portfolio item 1-->
@@ -98,8 +111,16 @@
                                 <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Jardín</div>
-                                <div class="portfolio-caption-subheading text-muted">Belleza</div>
+                                <div class="info-product">
+                                    <h2>Tour Jardin</h2>
+                                    <p class="price">$50</p>
+                                    <button class="btn-add-cart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg> 
+                                        Comprar Tour
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -113,8 +134,16 @@
                                 <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Cocorná</div>
-                                <div class="portfolio-caption-subheading text-muted">Ríos</div>
+                                <div class="info-product">
+                                    <h2>Tour Cocorná</h2>
+                                    <p class="price">$40</p>
+                                    <button class="btn-add-cart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg> 
+                                        Comprar Tour
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -128,8 +157,16 @@
                                 <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Sonson</div>
-                                <div class="portfolio-caption-subheading text-muted">Tradición</div>
+                                <div class="info-product">
+                                    <h2>Tour Sonsón</h2>
+                                    <p class="price">$45</p>
+                                    <button class="btn-add-cart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg> 
+                                        Comprar Tour
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -143,8 +180,16 @@
                                 <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Doradal</div>
-                                <div class="portfolio-caption-subheading text-muted">Diversidad</div>
+                                <div class="info-product">
+                                    <h2>Tour Doradal</h2>
+                                    <p class="price">$70</p>
+                                    <button class="btn-add-cart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg> 
+                                        Comprar Tour
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -158,8 +203,16 @@
                                 <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Guatapé</div>
-                                <div class="portfolio-caption-subheading text-muted">Turismo</div>
+                                <div class="info-product">
+                                    <h2>Tour Guatapé</h2>
+                                    <p class="price">$55</p>
+                                    <button class="btn-add-cart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg> 
+                                        Comprar Tour
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -173,8 +226,16 @@
                                 <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">El Carmen de Viboral</div>
-                                <div class="portfolio-caption-subheading text-muted">Loza</div>
+                                <div class="info-product">
+                                    <h2>Tour Carmen</h2>
+                                    <p class="price">$50</p>
+                                    <button class="btn-add-cart">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg> 
+                                        Comprar Tour
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -182,25 +243,17 @@
             </div>
         </section>
 
-        <!-- Clients
-        <div class="py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg" alt="..." aria-label="IBM Logo" /></a>
+        <!-- Administrador-->
+        <section class="page-section" id="cambioRol">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-2">
+                    <div class="rol-admin">
+                        <a class="btn btn-primary btn-xl text-uppercase enabled" href="admin.html">Administrador</a>
                     </div>
                 </div>
             </div>
-        </div> -->
+            
+        </section>
         
         <!-- Footer-->
         <footer class="footer py-4">
@@ -208,9 +261,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/elonmusk" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/valentinaqos/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="https://api.whatsapp.com/send?phone=573192896700" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
@@ -219,6 +272,7 @@
                 </div>
             </div>
         </footer>
+
         <!--  Modals-->
         <!-- Portfolio item 1 modal popup-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -230,18 +284,18 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Jardín</h2>
+                                    <h2 class="text-uppercase">Tour Jardín</h2>
                                     <p class="item-intro text-muted">Pueblitos de Antioquia.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Jardín es un lugar rico en historia y tradición. Es el destino perfecto para aquellos interesados en la cultura local, la arquitectura colonial y la artesanía.</p>
+                                    <p>Descubre Jardín, un lugar impregnado de historia, tradición y encanto. Nuestro exclusivo tour de un día te sumergirá en las hermosas calles empedradas de este pueblo, mientras disfrutas de una visita guiada que revelará sus tesoros históricos. Además, te brindaremos hospedaje en un acogedor alojamiento local y te deleitaremos con la deliciosa gastronomía tradicional. Déjate cautivar por la arquitectura colonial, la artesanía única y la cultura vibrante que Jardín tiene para ofrecerte. ¡Una experiencia enriquecedora te espera en este destino mágico de Colombia!</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>&#x1F4CD;Ubicación: </strong>
                                             <a href="https://goo.gl/maps/6FHB2L2rNDc7UmX88">Jardín en Google Maps</a>
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="Cerrar" data-bs-dismiss="modal" type="button">
+                                        
                                         Cerrar
                                     </button>
                                 </div>
@@ -264,15 +318,20 @@
                                     <h2 class="text-uppercase">Cocorná</h2>
                                     <p class="item-intro text-muted">Pueblitos de Antioquia</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Cocorná es conocida por su hermoso entorno natural, rodeado de montañas, ríos y bosques. La principal atracción turística del municipio es la represa de Playas, un embalse que ofrece actividades como pesca, paseos en bote y deportes acuáticos. La represa también cuenta con áreas recreativas y espacios para acampar. Además de su belleza natural, Cocorná tiene un centro histórico encantador con calles empedradas y casas coloniales.</p>
+                                    <p>Sumérgete en la extraordinaria belleza natural de Cocorná, un destino que cautiva con su entorno de montañas, 
+                                        ríos y bosques exuberantes. Su mayor tesoro es la impresionante represa de Playas, un embalse que invita a disfrutar 
+                                        de actividades como pesca, paseos en bote y deportes acuáticos. Además, encontrarás áreas recreativas y espacios ideales 
+                                        para acampar. Sumado a su esplendor natural, Cocorná te sorprenderá con un encantador centro histórico, donde calles empedradas
+                                         y casas coloniales te transportarán en el tiempo. Nuestro tour de Cocorná te brinda una visita guiada por los rincones más
+                                          hermosos del pueblo, complementado con hospedaje y exquisita alimentación. ¡Embárcate en esta aventura de un día y déjate 
+                                          seducir por la magia de Cocorná en Colombia!</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>&#x1F4CD;Ubicación: </strong>
                                             <a href="https://www.google.com/maps?client=opera&q=cocorna+antioquia&oe=UTF-8&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj3jqnWku7-AhVfRzABHet1AeAQ_AUoAXoECAEQAw">Cocorná en Google Maps</a>
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="btnTourCocorna" data-bs-dismiss="modal" type="button">
                                         Cerrar
                                     </button>
                                 </div>
@@ -295,15 +354,22 @@
                                     <h2 class="text-uppercase">Sonson</h2>
                                     <p class="item-intro text-muted">Pueblitos de Antioquia</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Sonson es conocido por su rica historia colonial y su arquitectura tradicional. El centro histórico del pueblo conserva casas coloniales de estilo antioqueño, calles empedradas y una plaza principal encantadora. </p>
+                                    <p>
+                                        Descubre Sonson, un tesoro impregnado de historia colonial y arquitectura tradicional. 
+                                        Su centro histórico te transportará en el tiempo con sus casas coloniales de estilo 
+                                        antioqueño, calles empedradas y una plaza principal encantadora. Nuestro tour de Sonson 
+                                        te brinda una experiencia inolvidable en un solo día, con una visita guiada por las más 
+                                        bellas calles del pueblo, además de proporcionarte hospedaje y deliciosa alimentación. 
+                                        Sumérgete en la esencia de Sonson y déjate cautivar por su encanto histórico en este 
+                                        fascinante destino en Colombia.
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>&#x1F4CD;Ubicación: </strong>
                                             <a href="https://www.google.com/maps/place/Sonsón,+Antioquia/@5.7120019,-75.3185533,15z/data=!3m1!4b1!4m6!3m5!1s0x8e46c2cc9192bdb3:0x29d7770adc36fb72!8m2!3d5.712002!4d-75.309798!16zL20vMDdrNDNi?hl=es">Sonson en Google Maps</a>
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="btnTourSonson" data-bs-dismiss="modal" type="button">
                                         Cerrar
                                     </button>
                                 </div>
@@ -326,16 +392,21 @@
                                     <h2 class="text-uppercase">Doradal</h2>
                                     <p class="item-intro text-muted">Pueblitos de Antioquia.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Este destino te ofrece una experiencia única que combina naturaleza, cultura y diversión para toda la familia. 
-                                        Sumérgete en la historia de Doradal mientras exploras sus encantadoras calles y admiras su arquitectura tradicional. Disfruta de la hospitalidad de su gente y sumérgete en la vida cotidiana de un auténtico pueblo colombiano.</p>
+                                    <p>
+                                        Embárcate en una experiencia única que combina naturaleza, cultura y diversión para todas las edades en Doradal. 
+                                        Este destino te sorprenderá con su rica historia mientras te sumerges en las encantadoras calles y admiras la 
+                                        arquitectura tradicional que lo caracteriza. Vive la autenticidad de un pueblo colombiano y disfruta de la 
+                                        hospitalidad de su gente mientras te sumerges en la vida cotidiana local. Nuestro tour de Doradal te brinda 
+                                        una visita guiada por los rincones más bellos del pueblo, complementado con hospedaje y exquisita alimentación. 
+                                        Todo esto en una jornada inolvidable. ¡Descubre la magia de Doradal en un día lleno de aventuras y descubrimientos!
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>&#x1F4CD;Ubicación: </strong>
                                             <a href="https://www.google.com/maps/place/Doradal,+Puerto+Triunfo,+Antioquia/@5.8998598,-74.7394774,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4146ff2b737b21:0x164ecfeacb1ca131!8m2!3d5.899722!4d-74.7338024!16s%2Fg%2F1hhxlpqmf?hl=es">Doradal en Google maps</a>
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="btnTourDoradal" data-bs-dismiss="modal" type="button">
                                         Cerrar
                                     </button>
                                 </div>
@@ -358,19 +429,25 @@
                                     <h2 class="text-uppercase">Guatapé</h2>
                                     <p class="item-intro text-muted">Pueblitos de Antioquia</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                                    <p> Sumérgete en un mundo de colores, historia y belleza natural mientras exploras este encantador pueblo que cautiva a todos los visitantes.
-
-                                        Guatapé es famoso por sus zócalos pintados, coloridos diseños que adornan las fachadas de las casas, creando un paisaje único y vibrante. Recorre sus calles empedradas y maravíllate con cada rincón decorado con esta tradición artística.
-                                        
-                                        El principal atractivo de Guatapé es la majestuosa Piedra del Peñol, una enorme formación rocosa que se eleva a más de 200 metros de altura. </p>
+                                    <p>
+                                        Adéntrate en un mundo de colores, historia y belleza natural mientras exploras el 
+                                        encantador pueblo que ha cautivado a todos sus visitantes. Guatapé te sorprenderá con 
+                                        sus famosos zócalos pintados, hermosos diseños que adornan las fachadas de las casas, 
+                                        creando un paisaje único y vibrante. Recorre sus calles empedradas y déjate maravillar 
+                                        por cada rincón decorado con esta expresión artística tradicional. Además, el principal 
+                                        tesoro de Guatapé es la imponente Piedra del Peñol, una gigantesca formación rocosa que se 
+                                        eleva a más de 200 metros de altura. Nuestro tour de Guatapé te brinda una visita guiada 
+                                        por los rincones más bellos del pueblo, además de ofrecerte hospedaje y deliciosa 
+                                        alimentación. Disfruta de una experiencia completa en un solo día. ¡Embárcate en esta 
+                                        aventura y descubre la magia de Guatapé en Colombia!
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>&#x1F4CD;Ubicación: </strong>
                                             <a href="https://www.google.com/maps/place/Guatape,+Guatapé,+Antioquia/@6.2311428,-75.160711,17z/data=!3m1!4b1!4m6!3m5!1s0x8e441d2972edf1bb:0xc8e9c49c096f7adc!8m2!3d6.2337643!4d-75.1592213!16zL20vMDdodnhq?hl=es">Guatapé en Google Maps</a>
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
+                                    <button class="btn btn-primary btn-xl text-uppercase" id="btnTourGuatape" data-bs-dismiss="modal" type="button">
                                         Cerrar
                                     </button>
                                 </div>
@@ -393,17 +470,24 @@
                                     <h2 class="text-uppercase">El Carmen de Viboral</h2>
                                     <p class="item-intro text-muted">Pueblitos de Antioquia.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                                    <p>El Carmen de Viboral es reconocido como la cuna de la cerámica en Colombia. Sus calles están llenas de talleres y tiendas donde podrás admirar y adquirir hermosas piezas de cerámica tradicional. Descubre el arte y la habilidad de los artesanos locales mientras observas cómo dan vida a estas creaciones únicas.
-
-                                        Explora el centro histórico de El Carmen de Viboral y maravíllate con sus coloridas fachadas coloniales.</p>
+                                    <p>
+                                        Sumérgete en el encanto de El Carmen de Viboral, reconocido como la cuna de la cerámica 
+                                        en Colombia. Sus calles rebosan de talleres y tiendas donde podrás admirar y adquirir 
+                                        hermosas piezas de cerámica tradicional. Descubre el arte y la habilidad de los artesanos 
+                                        locales mientras observas cómo dan vida a estas creaciones únicas. Explora el centro 
+                                        histórico de El Carmen de Viboral y déjate maravillar por las coloridas fachadas coloniales 
+                                        que adornan sus calles. Nuestro tour te brinda una visita guiada por los rincones más bellos 
+                                        del pueblo, además de ofrecerte hospedaje y deliciosa alimentación. Sumérgete en una 
+                                        experiencia enriquecedora en un día completo. ¡Embárcate en esta aventura y descubre la 
+                                        magia de El Carmen de Viboral en Colombia!
+                                    </p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>&#x1F4CD;Ubicación: </strong>
                                             <a href="https://www.google.com/maps/place/El+Carmen+de+Viboral,+Antioquia/@6.0821993,-75.3476836,15z/data=!3m1!4b1!4m6!3m5!1s0x8e46a27958b041ef:0xb456095b6894bce4!8m2!3d6.087915!4d-75.337488!16s%2Fg%2F119twd4cz?hl=es">El Carmen de Viboral en Google Maps</a>
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
+                                    <button id="confirmar-compra" type="button">
                                         Cerrar
                                     </button>
                                 </div>
@@ -422,5 +506,6 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>
